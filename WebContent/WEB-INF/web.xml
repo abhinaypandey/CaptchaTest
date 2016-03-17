@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>CaptchaService</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>resources.application</param-value>
+  </context-param>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>tags</taglib-uri>
+      <taglib-location>/WEB-INF/tags.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+  <servlet>
+    <servlet-name>ImageCaptchaServlet</servlet-name>
+    <servlet-class>com.amgen.sharedservices.captcha.ImageCaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageCaptchaServlet</servlet-name>
+    <url-pattern>/ImageCaptchaServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SoundCaptchaServlet</servlet-name>
+    <servlet-class>com.amgen.sharedservices.captcha.SoundCaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SoundCaptchaServlet</servlet-name>
+    <url-pattern>/SoundCaptchaServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
